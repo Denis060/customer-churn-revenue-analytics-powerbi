@@ -1,10 +1,9 @@
 # Dashboard Images
 
-Add screenshots here before pushing to GitHub.
+Screenshots of the Power BI dashboard.
 
-Suggested files:
+- `executive-summary-v1.png` — current Executive Summary page (used as the README preview)
+- `progress/` — earlier build-in-public snapshots, kept as a record of how the page came together
 
-- `dashboard_preview.png`
-- `kpi_section.png`
-- `churn_by_contract.png`
-- `executive_summary_page.png`
+When a page changes meaningfully, save the new screenshot with the next version number
+(`executive-summary-v2.png`) and point the README at it, rather than overwriting the old one.

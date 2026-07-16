@@ -1,7 +1,37 @@
 # Customer Churn & Revenue Analytics Dashboard
 
-> **Status:** Work in Progress  
-> This project is currently being built in public. The PostgreSQL/SQL layer and KPI section are complete. The remaining Power BI visuals are still under development.
+**SQL · PostgreSQL · Power BI · DAX**
+
+## 🚧 Project Status
+
+**Current progress:** Executive Summary page complete.
+
+### Completed
+
+- PostgreSQL database setup
+- SQL data cleaning pipeline
+- Analytical SQL views
+- Power BI data model
+- DAX KPI measures
+- Executive Summary dashboard
+  - KPI cards
+  - Churn Rate by Contract Type
+  - Monthly Revenue by Segment
+  - Churn by Tenure Group
+  - Key Business Insight panel
+  - Revenue at Risk by Payment Method
+
+### In Progress
+
+- Churn Drivers page
+- Revenue Analysis page
+- Customer Segmentation page
+
+This project is being built publicly and updated regularly.
+
+## Executive Summary Dashboard
+
+![Executive Summary](images/executive-summary-v1.png)
 
 ## Project Overview
 
@@ -38,40 +68,6 @@ This dashboard is designed to answer:
 - **Power BI** — dashboard design and visualization
 - **DAX** — KPI formatting and display measures
 - **IBM Telco Customer Churn Dataset** — customer churn analysis dataset
-
-## Dashboard Preview
-
-### Executive Dashboard Progress
-
-The executive dashboard page is currently in progress.
-
-The KPI cards have been completed with DAX formatting, and the first churn driver visual is being developed.
-
-![Executive Dashboard Work in Progress](images/progress/03_executive_dashboard_wip.png)
-
-## Current Progress
-
-Completed:
-
-- PostgreSQL database created
-- Raw customer churn data loaded
-- SQL cleaning view created
-- Executive KPI SQL view created
-- Churn and revenue analysis views created
-- Power BI connected to PostgreSQL
-- Executive dashboard layout created
-- Sidebar navigation designed
-- KPI cards created
-- DAX measures added for clean KPI formatting
-
-In progress:
-
-- Churn Rate by Contract Type chart
-- Churn by Tenure Group chart
-- Monthly Revenue by Segment visual
-- Revenue at Risk by Payment Method visual
-- Business insight panel
-- Final dashboard polish
 
 ## Dashboard Pages
 
