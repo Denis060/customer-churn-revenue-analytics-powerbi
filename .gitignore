@@ -1,0 +1,24 @@
+# Power BI
+*.pbix.bak
+~$*.pbix
+*.pbi-cache/
+
+# Data — raw datasets are not committed (see data/README.md for the source)
+data/*.csv
+data/*.xlsx
+data/*.zip
+
+# Credentials
+*.env
+.env*
+credentials.json
+connection_strings.txt
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
