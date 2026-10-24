@@ -2,9 +2,9 @@
 
 **SQL · PostgreSQL · Power BI · DAX**
 
-## 🚧 Project Status
+## Status
 
-**Current progress:** Executive Summary page complete.
+The Executive Summary page is complete; the remaining pages listed below are in development.
 
 ### Completed
 
@@ -21,13 +21,12 @@
   - Key Business Insight panel
   - Revenue at Risk by Payment Method
 
-### In Progress
+### Next
 
 - Churn Drivers page
 - Revenue Analysis page
 - Customer Segmentation page
 
-This project is being built publicly and updated regularly.
 
 ## Executive Summary Dashboard
 
