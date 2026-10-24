@@ -1,122 +1,62 @@
-# Customer Churn & Revenue Analytics Dashboard
+# Customer Churn & Revenue Analytics (PostgreSQL + Power BI)
 
-**SQL · PostgreSQL · Power BI · DAX**
+> End-to-end BI project: raw telecom customer data cleaned and modeled in PostgreSQL, served through SQL views to a Power BI dashboard with DAX KPIs that quantifies churn and monthly revenue at risk.
 
-## Status
-
-The Executive Summary page is complete; the remaining pages listed below are in development.
-
-### Completed
-
-- PostgreSQL database setup
-- SQL data cleaning pipeline
-- Analytical SQL views
-- Power BI data model
-- DAX KPI measures
-- Executive Summary dashboard
-  - KPI cards
-  - Churn Rate by Contract Type
-  - Monthly Revenue by Segment
-  - Churn by Tenure Group
-  - Key Business Insight panel
-  - Revenue at Risk by Payment Method
-
-### Next
-
-- Churn Drivers page
-- Revenue Analysis page
-- Customer Segmentation page
-
-
-## Executive Summary Dashboard
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-336791.svg) ![Power BI](https://img.shields.io/badge/Power%20BI-DAX-F2C811.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ![Executive Summary](images/executive-summary-v1.png)
 
-## Project Overview
+## Overview
 
-This project is an end-to-end customer churn and revenue analytics dashboard built using **PostgreSQL, SQL, Power BI, and DAX**.
+Built on the public **IBM Telco Customer Churn** dataset (7,043 customers), this project follows the workflow an analytics team would use in production: land the raw data, clean it in SQL, expose business-ready views, and build an executive dashboard on top.
 
-The goal is to analyze customer churn behavior, identify high-risk customer segments, measure monthly revenue at risk, and provide business recommendations for improving customer retention.
+## Problem / Motivation
 
-The project uses the **IBM Telco Customer Churn dataset** and follows a realistic analytics workflow:
+A subscription business needs to know not just *how many* customers leave, but *how much recurring revenue is exposed* and *which segments to act on first* — by contract type, tenure, and payment method.
 
-1. Load raw customer data into PostgreSQL
-2. Clean and transform the data using SQL
-3. Create analytical SQL views for dashboard-ready metrics
-4. Connect PostgreSQL to Power BI
-5. Build an executive dashboard using Power BI
-6. Format KPI cards using DAX measures
-7. Present churn, revenue, contract, tenure, and payment-method insights
+## Approach & tech stack
 
-## Business Questions
+1. **Load** raw CSV into PostgreSQL (`sql/01_create_database.sql`, `sql/02_create_raw_table.sql`)
+2. **Clean** with a SQL view — types, blanks, derived fields (`sql/03_cleaning_view.sql`)
+3. **Model** analytical views for KPIs, churn and revenue (`sql/04`–`06`)
+4. **Visualize** in Power BI (`dashboard/Customer_Churn_SQL_PowerBI_Dashboard.pbix`) with DAX measures documented in `dax/measures.md`
 
-This dashboard is designed to answer:
+**Stack:** PostgreSQL · SQL (CTEs, aggregations, views) · Power BI · DAX
 
-- What is the overall churn rate?
-- How much monthly recurring revenue is at risk?
-- Which contract types have the highest churn?
-- Which tenure groups are most vulnerable?
-- Which payment methods are linked to revenue risk?
-- Which customer segments should the business prioritize?
-- What actions can reduce churn and improve retention?
+SQL views: `vw_telco_clean`, `vw_executive_kpis`, `vw_churn_by_contract`, `vw_churn_by_tenure_group`, `vw_revenue_by_internet_service`, `vw_revenue_at_risk_by_payment_method`, `vw_customer_segments`
 
-## Tools Used
+## Key features
 
-- **PostgreSQL** — database and SQL transformation layer
-- **SQL** — data cleaning, analytical views, KPI preparation
-- **Power BI** — dashboard design and visualization
-- **DAX** — KPI formatting and display measures
-- **IBM Telco Customer Churn Dataset** — customer churn analysis dataset
+- KPI cards: customers, churn rate, monthly revenue, revenue at risk, avg. monthly charge, retention
+- Churn rate by contract type and tenure group
+- Monthly revenue by segment; revenue at risk by payment method
+- Business-insight panel on the executive page
 
-## Dashboard Pages
-
-### 1. Executive Summary
-
-The executive summary page gives a high-level view of:
-
-- Total customers
-- Churn rate
-- Monthly revenue
-- Revenue at risk
-- Average monthly charge
-- Retention rate
-- Churn by contract type
-- Revenue-risk insights
-
-### 2. Churn Drivers
-
-This page focuses on understanding what factors are associated with customer churn.
-
-### 3. Revenue Analysis
-
-This page focuses on revenue exposure, monthly recurring revenue, and customer value risk.
-
-### 4. Customer Segmentation
-
-This page groups customers into meaningful business segments for retention planning.
-
-## Key KPI Metrics
-
-Current executive KPI values:
+## Results (Executive Summary page)
 
 | Metric | Value |
 |---|---:|
-| Total Customers | 7,043 |
-| Churn Rate | 26.5% |
-| Monthly Revenue | $456.1K |
-| Revenue at Risk | $139.1K |
-| Average Monthly Charge | $64.76 |
-| Retention Rate | 73.5% |
+| Total customers | 7,043 |
+| Churn rate | 26.5% |
+| Monthly revenue | $456.1K |
+| Monthly revenue at risk (churned customers) | $139.1K |
+| Average monthly charge | $64.76 |
+| Retention rate | 73.5% |
 
-## SQL Views Created
+## Status
 
-The dashboard is powered by SQL views created in PostgreSQL.
+Executive Summary page complete. Churn Drivers, Revenue Analysis and Customer Segmentation pages are in development.
 
-```sql
-vw_telco_clean
-vw_executive_kpis
-vw_churn_by_contract
-vw_churn_by_tenure_group
-vw_revenue_by_internet_service
-vw_revenue_at_risk_by_payment_method
-vw_customer_segments
+## How to run
+
+1. Create the database and tables: run `sql/01`–`02` in PostgreSQL, then load the Telco CSV (see `data/README.md`).
+2. Run `sql/03`–`06` to create the cleaning and analytical views.
+3. Open `dashboard/Customer_Churn_SQL_PowerBI_Dashboard.pbix` in Power BI Desktop and point the data source at your PostgreSQL instance.
+
+---
+
+## About the author
+
+**Ibrahim Denis Fofanah** — Data Scientist · ML / GenAI (RAG, agents) · BI & analytics · MS Data Science, Pace University (2025)
+
+[LinkedIn](https://www.linkedin.com/in/ibrahim-denis-fofanah/) · [Email](mailto:ibrahim.fofanah.ds@gmail.com) · [Live RAG portfolio project](https://moijey-copilot.vercel.app) · [GitHub](https://github.com/Denis060)
